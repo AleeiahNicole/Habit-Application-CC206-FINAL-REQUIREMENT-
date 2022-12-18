@@ -1,0 +1,760 @@
+import '../flutter_flow/flutter_flow_icon_button.dart';
+import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+
+class AchievementsWidget extends StatefulWidget {
+  const AchievementsWidget({Key? key}) : super(key: key);
+
+  @override
+  _AchievementsWidgetState createState() => _AchievementsWidgetState();
+}
+
+class _AchievementsWidgetState extends State<AchievementsWidget> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: Colors.white,
+      drawer: Drawer(
+        elevation: 16,
+        child: Container(
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            color: Color(0xFF1C5246),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
+                child: Image.asset(
+                  'assets/images/Untitled_design.png',
+                  width: 204.5,
+                  height: 286.7,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('schedule');
+                        },
+                        text: 'SCHEDULE',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 50,
+                          color: Color(0xFF08E9C8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('pomodoro');
+                        },
+                        text: 'POMODORO',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 50,
+                          color: Color(0xFF08E9C8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('notes');
+                        },
+                        text: 'NOTES',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 50,
+                          color: Color(0xFF08E9C8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () {
+                          print('Button pressed ...');
+                        },
+                        text: 'ACHIEVEMENTS',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 50,
+                          color: Color(0xFF08E9C8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.menu,
+            color: FlutterFlowTheme.of(context).primaryText,
+            size: 30,
+          ),
+          onPressed: () async {
+            scaffoldKey.currentState!.openDrawer();
+          },
+        ),
+        title: InkWell(
+          onTap: () async {
+            context.pushNamed('homepage');
+          },
+          child: Text(
+            'HABIT',
+            style: FlutterFlowTheme.of(context).title2.override(
+                  fontFamily: 'Fredoka One',
+                  color: Color(0xFF08E9C8),
+                  fontSize: 30,
+                  letterSpacing: 3,
+                  fontWeight: FontWeight.w500,
+                ),
+          ),
+        ),
+        actions: [
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.notifications_none,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30,
+            ),
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
+          ),
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.share_outlined,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30,
+            ),
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
+          ),
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.search_rounded,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30,
+            ),
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
+          ),
+        ],
+        centerTitle: false,
+        elevation: 2,
+      ),
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(65, 30, 0, 0),
+                    child: Text(
+                      'ACHIEVEMENTS',
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Fredoka One',
+                            color: Color(0xFF326E62),
+                            fontSize: 35,
+                            fontWeight: FontWeight.w500,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                child: Container(
+                  width: 344.5,
+                  height: 94.5,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1C5246),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 4,
+                        color: Color(0x33000000),
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Icon(
+                                      Icons.star_rounded,
+                                      color: Colors.white,
+                                      size: 60,
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 10, 0, 10),
+                                  child: Text(
+                                    'Daily Streak',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'DM Sans',
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(40, 20, 0, 10),
+                            child: Text(
+                              '1/7days',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'DM Sans',
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+                            child: LinearPercentIndicator(
+                              percent: 0.2,
+                              width: 200,
+                              lineHeight: 10,
+                              animation: true,
+                              progressColor: Color(0xFF08E9C8),
+                              backgroundColor: Color(0xFFE0E0E0),
+                              barRadius: Radius.circular(40),
+                              padding: EdgeInsets.zero,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                child: Container(
+                  width: 344.5,
+                  height: 94.5,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1C5246),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 4,
+                        color: Color(0x33000000),
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Icon(
+                                      Icons.fact_check_outlined,
+                                      color: Colors.white,
+                                      size: 60,
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 10, 0, 10),
+                                  child: Text(
+                                    'Daily Tasks',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'DM Sans',
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(40, 20, 0, 10),
+                            child: Text(
+                              '3/4 assigned\n tasks',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'DM Sans',
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+                            child: LinearPercentIndicator(
+                              percent: 0.9,
+                              width: 200,
+                              lineHeight: 10,
+                              animation: true,
+                              progressColor: Color(0xFF08E9C8),
+                              backgroundColor: Color(0xFFE0E0E0),
+                              barRadius: Radius.circular(40),
+                              padding: EdgeInsets.zero,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                child: Container(
+                  width: 344.5,
+                  height: 94.5,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1C5246),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 4,
+                        color: Color(0x33000000),
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Icon(
+                                      Icons.menu_book_sharp,
+                                      color: Colors.white,
+                                      size: 60,
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 10, 0, 10),
+                                  child: Text(
+                                    'Study',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'DM Sans',
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(90, 20, 0, 10),
+                            child: Text(
+                              '1/6 hours',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'DM Sans',
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+                            child: LinearPercentIndicator(
+                              percent: 0.1,
+                              width: 200,
+                              lineHeight: 10,
+                              animation: true,
+                              progressColor: Color(0xFF08E9C8),
+                              backgroundColor: Color(0xFFE0E0E0),
+                              barRadius: Radius.circular(40),
+                              padding: EdgeInsets.zero,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                child: Container(
+                  width: 344.5,
+                  height: 94.5,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1C5246),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 4,
+                        color: Color(0x33000000),
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Icon(
+                                      Icons.access_time,
+                                      color: Colors.white,
+                                      size: 60,
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 10, 0, 10),
+                                  child: Text(
+                                    'Hours Focused',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'DM Sans',
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 20, 0, 10),
+                            child: Text(
+                              '8/10 hours',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'DM Sans',
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+                            child: LinearPercentIndicator(
+                              percent: 0.8,
+                              width: 200,
+                              lineHeight: 10,
+                              animation: true,
+                              progressColor: Color(0xFF08E9C8),
+                              backgroundColor: Color(0xFFE0E0E0),
+                              barRadius: Radius.circular(40),
+                              padding: EdgeInsets.zero,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                child: Container(
+                  width: 344.5,
+                  height: 94.5,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1C5246),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 4,
+                        color: Color(0x33000000),
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Icon(
+                                      Icons.timer_rounded,
+                                      color: Colors.white,
+                                      size: 60,
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 10, 0, 10),
+                                  child: Text(
+                                    'Pomodoro',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'DM Sans',
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(50, 20, 0, 10),
+                            child: Text(
+                              '3/4 hours',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'DM Sans',
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+                            child: LinearPercentIndicator(
+                              percent: 0.9,
+                              width: 200,
+                              lineHeight: 10,
+                              animation: true,
+                              progressColor: Color(0xFF08E9C8),
+                              backgroundColor: Color(0xFFE0E0E0),
+                              barRadius: Radius.circular(40),
+                              padding: EdgeInsets.zero,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
