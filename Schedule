@@ -1,0 +1,614 @@
+import '../flutter_flow/flutter_flow_calendar.dart';
+import '../flutter_flow/flutter_flow_icon_button.dart';
+import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class ScheduleWidget extends StatefulWidget {
+  const ScheduleWidget({Key? key}) : super(key: key);
+
+  @override
+  _ScheduleWidgetState createState() => _ScheduleWidgetState();
+}
+
+class _ScheduleWidgetState extends State<ScheduleWidget> {
+  DateTimeRange? calendarSelectedDay;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    calendarSelectedDay = DateTimeRange(
+      start: DateTime.now().startOfDay,
+      end: DateTime.now().endOfDay,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      drawer: Drawer(
+        elevation: 16,
+        child: Container(
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            color: Color(0xFF1C5246),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
+                child: Image.asset(
+                  'assets/images/Untitled_design.png',
+                  width: 204.5,
+                  height: 286.7,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('schedule');
+                        },
+                        text: 'SCHEDULE',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 50,
+                          color: Color(0xFF08E9C8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('pomodoro');
+                        },
+                        text: 'POMODORO',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 50,
+                          color: Color(0xFF08E9C8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('notes');
+                        },
+                        text: 'NOTES',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 50,
+                          color: Color(0xFF08E9C8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('achievements');
+                        },
+                        text: 'ACHIEVEMENTS',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 50,
+                          color: Color(0xFF08E9C8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.menu,
+            color: FlutterFlowTheme.of(context).primaryText,
+            size: 30,
+          ),
+          onPressed: () async {
+            scaffoldKey.currentState!.openDrawer();
+          },
+        ),
+        title: InkWell(
+          onTap: () async {
+            context.pushNamed('homepage');
+          },
+          child: Text(
+            'HABIT',
+            style: FlutterFlowTheme.of(context).title2.override(
+                  fontFamily: 'Fredoka One',
+                  color: Color(0xFF08E9C8),
+                  fontSize: 30,
+                  letterSpacing: 3,
+                  fontWeight: FontWeight.w500,
+                ),
+          ),
+        ),
+        actions: [
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.notifications_none,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30,
+            ),
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
+          ),
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.share_outlined,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30,
+            ),
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
+          ),
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.search_rounded,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30,
+            ),
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
+          ),
+        ],
+        centerTitle: false,
+        elevation: 2,
+      ),
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(100, 30, 0, 0),
+                    child: Text(
+                      'SCHEDULE',
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Fredoka One',
+                            color: Color(0xFF326E62),
+                            fontSize: 35,
+                            fontWeight: FontWeight.w500,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                child: Container(
+                  width: 347.9,
+                  height: 283.8,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF08E9C8),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: FlutterFlowCalendar(
+                    color: Colors.white,
+                    iconColor: Colors.white,
+                    weekFormat: false,
+                    weekStartsMonday: false,
+                    rowHeight: 40,
+                    onChange: (DateTimeRange? newSelectedDate) {
+                      setState(() => calendarSelectedDay = newSelectedDate);
+                    },
+                    titleStyle: TextStyle(),
+                    dayOfWeekStyle: TextStyle(),
+                    dateStyle: TextStyle(),
+                    selectedDateStyle: TextStyle(
+                      color: Color(0xFF1C5246),
+                    ),
+                    inactiveDateStyle: TextStyle(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                child: Container(
+                  width: 389,
+                  height: 381.5,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF326E62),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(40, 30, 0, 0),
+                            child: Text(
+                              'December 18',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'DM Sans',
+                                    color: Colors.white,
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(30, 33, 0, 0),
+                            child: Text(
+                              'Sort by time',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'DM Sans',
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 30, 0, 0),
+                            child: Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.white,
+                              size: 24,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 30, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              child: Text(
+                                'CC206 - Google Meet',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'DM Sans',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
+                              child: Text(
+                                '8:30 AM',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'DM Sans',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 10, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Stack(
+                              children: [
+                                Container(
+                                  width: 322.4,
+                                  height: 28.4,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF08E9C8),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20, 0, 0, 0),
+                                    child: Text(
+                                      'CIT211 - Presentation  10:00PM',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'DM Sans',
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 10, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              child: Text(
+                                'BA 234 - Quiz #2',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'DM Sans',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(90, 0, 0, 0),
+                              child: Text(
+                                '1:00 PM',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'DM Sans',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 10, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              child: Text(
+                                'CIT231 - Payroll Activity',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'DM Sans',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
+                              child: Text(
+                                '3:30 PM',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'DM Sans',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 10, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              child: Text(
+                                'CC208 - Video Submission',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'DM Sans',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              child: Text(
+                                '5:00 PM',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'DM Sans',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(150, 20, 0, 0),
+                            child: FlutterFlowIconButton(
+                              borderColor: Color(0xFF08E9C8),
+                              borderRadius: 40,
+                              borderWidth: 1,
+                              buttonSize: 40,
+                              fillColor: Color(0xFF08E9C8),
+                              icon: Icon(
+                                Icons.bookmark_border,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                              onPressed: () {
+                                print('IconButton pressed ...');
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 20, 0, 0),
+                            child: FFButtonWidget(
+                              onPressed: () {
+                                print('Button pressed ...');
+                              },
+                              text: 'Add Schedule',
+                              options: FFButtonOptions(
+                                width: 150,
+                                height: 40,
+                                color: Color(0xFF08E9C8),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
